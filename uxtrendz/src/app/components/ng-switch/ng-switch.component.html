@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="text-center my-5">NGSWITCH DIRECTIVE</h2>
+  <div class="col-md-4">
+    <select class="btn btn-primary" (change)="getProductChange($event)">
+      <option hidden="true">NG SWITCH</option>
+      <option class="btn btn-light" value="Washing Machine">
+        Washing Machine
+      </option>
+      <option class="btn btn-light" value="Tv">Tv</option>
+      <option class="btn btn-light" value="Laptop">Laptop</option>
+      <option class="btn btn-light" value="Mobile">Mobile</option>
+      <option class="btn btn-light" value="Bike">Bike</option>
+    </select>
+  </div>
+  <div class="my-4 position-absolute top-50 start-50 translate-middle" [ngSwitch]="selectedProduct">
+    <h3 *ngSwitchDefault class="text-success">PLEASE SELECT THE PRODUCT</h3>
+    <h3 *ngSwitchCase="'Washing Machine'"  class="text-success">WASHING MACHINE</h3>
+    <h3 *ngSwitchCase="'Tv'"  class="text-success">TV</h3>
+    <h3 *ngSwitchCase="'Laptop'"  class="text-success">LAPTOP</h3>
+    <h3 *ngSwitchCase="'Mobile'"  class="text-success">MOBILE</h3>
+    <h3 *ngSwitchCase="'Bike'"  class="text-success">BIKE</h3>
+  </div>
+</div>
